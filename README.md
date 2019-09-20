@@ -5,6 +5,6 @@ This is a new LaTeX template for Stevens Institute of Technology Ph.D. dissertat
 
 * You should have received a copy of the license along with this work.  If not, see [CreativeCommons](http://creativecommons.org/licenses/by/3.0/)
 
-:warning: Note: This is not an official template. But it can help you to submit your document according to the wanted layout of the thesis/dissertation.
+:warning: <b>Note:</b> This is not an official template. But it can help you to submit your document according to the wanted layout of the thesis/dissertation.
 
-* The author/creator of this LaTeX template is not responsible for any rejection of the template by the library.
+:exclamation: <i>The author/creator of this LaTeX template is not responsible for any rejection of the template by the library.</i>
