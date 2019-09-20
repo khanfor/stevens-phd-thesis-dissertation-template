@@ -1,0 +1,335 @@
+%% Modified by Abdullah Khanfor for Stevens Institute of Technology PhD thesis format design guidelines 2019-2020
+% NYU PhD thesis format. Original template created by José Koiller 2007--2008.
+%% Updated by Anshul Vikram Pandey with new design guidelines. 2017-2018
+
+%% Use the first of the following lines during production to
+%% easily spot "overfull boxes" in the output. Use the second
+%% line for the final version.
+% \documentclass[12pt,draft,letterpaper]{report}
+% \documentclass[12pt,letterpaper]{report}
+\documentclass[12pt]{report}
+
+%% Replace the title, name, advisor name, graduation date and dedication below with
+%% your own. Graduation months must be January, May or September.
+\newcommand{\thesistitle}{TITLE TO JUSTIFY YOUR PHD YEARS}
+\newcommand{\thesisauthor}{Your Name}
+\newcommand{\thesisadvisor}{Your Advisor's Name}
+\newcommand{\thesisyear}{2020}
+\newcommand{\thesisname}{Abdullah Khanfor}
+\newcommand{\thesischairadvisor}{Dr. }    % this name prints on the title page as chairman and the abstract page as advisor
+\newcommand{\committeenameA}{Dr. }
+\newcommand{\committeenameB}{Dr. }
+\newcommand{\committeenameC}{Dr. }
+\newcommand{\thesisdepartment}{Systems Engineering}
+\newcommand{\thesisdate}{November 22, 2020}
+\newcommand{\thesistype}{dissertation}
+\newcommand{\thesisdegree}{Doctor of Philosophy}
+\newcommand{\graddate}{\the\year} % like 2020, 2019, no month or day should be written
+\newcommand{\thesissigline}[1]{%
+  \leftline{\hbox to 2.5in{}\hrulefill}
+  \endgraf
+  \vspace*{-18pt}
+  \leftline{\hbox to 2.53in{}{#1}}}
+
+%% If you do not want a dedication, scroll down and comment out
+%% the appropriate lines in this file.
+\newcommand{\thesisdedication}{To all the Ph.D. pursuing brave souls}
+
+%% The following makes chapters and sections, but not subsections,
+%% appear in the TOC (table of contents). Increase to 2 or 3 to
+%% make subsections or subsubsections appear, respectively. It seems
+%% to be usual to use the "1" setting, however.
+\setcounter{tocdepth}{1}
+
+%% Sectional units up to subsubsections are numbered. To number
+%% subsections, but not subsubsections, decrease this counter to 2.
+\setcounter{secnumdepth}{3}
+
+% Setting a gap between page number and text block
+
+%% This inputs your auxiliary file with \usepackage's and \newcommand's:
+%% It is assumed that that file is called "definitions.tex".
+\input{definitions}
+
+
+%% Use the following commands, if desired, during production.
+%% Comment them out for final version.
+%\usepackage{layout} % defines the \layout command, see below
+%\setlength{\hoffset}{-.75in} % creates a large right margin for notes and \showlabels
+
+\pagestyle{fancy}
+\fancyhf{}
+% this prints a line under the header
+\renewcommand{\headrulewidth}{0 pt}
+%this prints a line under the footer
+\renewcommand{\footrulewidth}{0 pt}
+\fancyhead[RO]{}
+\fancyhead[LO]{}
+\fancyfoot[C]{}
+\rhead{\thepage}
+
+\fancypagestyle{plain}{%
+\fancyhf{}
+\rhead{\thepage}
+}
+
+%% Page layout (customized to letter paper and NYU requirements):
+\setlength{\headheight}{20pt} 
+
+%% Use the line below for official NYU version, which requires
+%% double line spacing. For all other uses, this is unnecessary,
+%% so the line can be commented out.
+\onehalfspacing % requires package setspace, invoked above
+
+%% Each of the following lines defines the \com command, which produces
+%% a comment (notes for yourself, for instance) in the output file.
+%% Example:    \com{this will appear as a comment in the output}
+%% Choose (uncomment) only one of the three forms:
+%\newcommand{\com}[1]{[/// {#1} ///]}       % between [/// and ///].
+\newcommand{\com}[1]{\marginpar{\tiny #1}} % as (tiny) margin notes
+%\newcommand{\com}[1]{}                     % suppress all comments.
+
+%% Cross-referencing utilities. Use one or the other--whichever you prefer--
+%% but comment out both lines for final version.
+%\usepackage{showlabels}
+%\usepackage{showkeys}
+% \pagestyle{headings}
+
+\begin{document}
+%% Produces a test "layout" page, for "debugging" purposes only.
+%% Comment out for final version.
+%\layout % requires package layout (see above, on this same file)
+%% Sets page numbering to "roman style" i, ii, iii, iv, etc:
+
+%%%%%% Cover page %%%%%%%%%%%
+%% Sets page numbering to "roman style" i, ii, iii, iv, etc:
+\pagenumbering{roman}
+\thispagestyle{empty}
+\begin{center}
+{
+  {\thesistitle}
+  \vspace{.15in}
+  
+    by
+    
+  \vspace{.15in}
+  \thesisauthor
+  
+  \vspace{.15in}
+  
+ {A DISSERTATION}\\
+  \vspace{.2in}
+  \begin{spacing}{1}
+    {Submitted to the Faculty of the Stevens Institute of Technology\\
+    in partial fulfillment of the requirements for the degree of}
+    \end{spacing}
+  \vspace{.2in}
+  
+  {DOCTOR OF PHILOSOPHY}\\
+  \vspace{1.0in}
+  % for master thesis, change Chairman to Advisor
+    \hfill 
+    \begin{minipage}{80mm}
+    \begin{spacing}{ }\noindent \rule{3.2in}{0.1mm}
+        \thesisname, Candidate\\[3mm]
+        \underline{ADVISORY COMMITTEE}\\[3mm]
+        \noindent \rule{3.2in}{0.1mm}\\[-1.3mm]
+        % for master thesis, change Chairman to Advisor
+        {\thesischairadvisor}, Chairman  \hfill{Date}\\[2mm]
+        {\noindent \rule{3.2in}{0.1mm}}\\[-1.3mm]
+        {\committeenameA}        \hfill{Date}\\[2mm]
+        {\noindent \rule{3.2in}{0.1mm}}\\[-1.3mm]
+        {\committeenameB}        \hfill{Date}\\[2mm]
+        {\noindent \rule{3.2in}{0.1mm}}\\[-1.3mm]
+        {\committeenameC}        \hfill{Date}\\[2mm]
+    \end{spacing}
+  \end{minipage}
+  \vfill
+  
+  {STEVENS INSTITUTE OF TECHNOLOGY\\
+  \vspace{-0.05in}
+  Castle Point on Hudson\\
+  Hoboken, NJ 07030
+  }
+  % \vfill
+
+  {\graddate}
+}
+
+\end{center}
+
+\newpage
+
+
+
+%%%%%%%%%%%%%% Microfilm / Publishing Page ProQuest %%%%%%%%%%%%%%%%%
+% You can comment this section it is here to show you how it will appear when it submitted.
+\thispagestyle{empty}
+\begin{center}
+ProQuest Number: XXXXXXXX
+
+\vspace{.45in}
+
+All rights reserved.
+
+\vspace{.1in}
+
+INFORMATION TO ALL USERS\\
+The quality of this reproduction is dependent upon the quality of the copy submitted.
+\vspace{.2in}
+
+In the unlikely event hat  the author did not send a complete manuscript and there are missing pages, these will be  noted. Also ,if material had to be removed, a note will indicate the deletion.
+
+\vspace{.1in}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=200px]{misc/proquest-seeklogo.eps}
+\end{figure}
+
+\vspace{.1in}
+
+ProQuest Number: XXXXXXXX
+
+\vspace{.1in}
+
+Published  by  ProQuest  LLC (\the\year).        Copyright of the Dissertation is held by the Author.
+
+\vspace{.2in}
+
+All rights reserved. This work is protected against  unauthorized copying under Title 17, United States Code Microform Edition {\textcopyright} ProQuest  LLC.
+
+\vspace{.2in}
+
+ProQuest LLC.\\
+789 East Eisenhower Parkway\\
+P.O. Box 1346\\
+Ann Arbor, MI  48106-1346
+
+\end{center}
+\newpage
+
+%%%%%% Copyrights page %%%%%%%%%%%
+%
+\setcounter{page}{2}
+%% No numbering in the title page:
+\thispagestyle{empty}
+%
+\begin{center}
+{
+  \vspace*{\fill}
+
+  {\textcopyright} \graddate, \thesisname. All rights reserved.
+}
+
+\end{center}
+
+\newpage
+\doublespacing
+
+%%%%%%%%%%%%%% Abstract %%%%%%%%%%%%%%%%%
+\begin{center}
+    {\thesistitle}\\ 
+    {ABSTRACT}\\
+    \vspace{.05in}
+\end{center}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{abstract}
+\vspace{0.4in}
+\begin{flushleft}
+Author: \thesisname \\
+Advisor: \thesischairadvisor \\
+Date: \thesisdate \\
+Department: \thesisdepartment \\
+Degree: \thesisdegree \\
+\end{flushleft}
+\newpage
+
+%%%%%%%%%%%%%% Dedication Page %%%%%%%%%%%%%%%%%
+%% Comment out the following lines if you do not want to dedicate it is optional
+\chapter*{Dedication}
+\addcontentsline{toc}{chapter}{Dedication}
+\strut \vspace{2in}
+\begin{center}
+``Most people are other people. Their thoughts are someone else's opinions, their lives a mimicry, their passions a quotation."
+    \end{center}
+    \vfill \strut
+    \newpage
+\newpage
+
+%%%%%%%%%%%%%% Acknowledgements %%%%%%%%%%%%%%%%%
+%% Comment out the following lines if you do not want to acknowledge
+%% anyone's help...
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\input{acknowledge}
+\newpage
+
+%%%% Table of Contents %%%%%%%%%%%%
+\setcounter{tocdepth}{3} % To show a three level depth of sections
+
+\tableofcontents
+
+% \clearpage
+% \pagestyle{headings}
+\newpage
+
+%%%%% List of Tables %%%%%%%%%%%%%
+%% Comment out the following two lines if your thesis does not
+%% contain any tables. The list of tables contains only
+%% those tables included withing the "table" environment.
+\listoftables\addcontentsline{toc}{chapter}{\listtablename}
+\newpage
+
+%%%%% List of Figures %%%%%%%%%%%%%
+%% Comment out the following two lines if your thesis does not
+%% contain any figures. The list of figures contains only
+%% those figures included withing the "figure" environment.
+\listoffigures\addcontentsline{toc}{chapter}{\listfigurename}
+\newpage
+
+%%%%% Body of thesis starts %%%%%%%%%%%%
+\pagenumbering{arabic} % switches page numbering to arabic: 1, 2, 3, etc.
+
+%% Introduction. If your thesis has no introduction, or chapter 1 is
+%% meant to be the introduction, then comment out the lines below.
+%% \section*{Introduction}\addcontentsline{toc}{section}{Introduction}
+%\input{intro}
+
+%%If your thesis has different "Parts", use commands such as the following:
+
+\input{introduction/introduction}
+
+\input{methodology/methodology}
+
+\input{casestudy/casestudy}
+
+\input{conclusion/conclusion}
+%%%%% Appendices start %%%%%%%%%%%%%%%%
+%% Comment out the following line if your thesis has no appendix
+\addcontentsline{toc}{chapter}{Appendices}
+\noindent \textbf{Appendices}
+\appendix
+\input{appendix/app1}
+\input{appendix/app2}
+
+%% Note: If your thesis has more than one appendix, NYU requires a "list of
+%% appendices" page before the body of the thesis. I don't provide the tools
+%% to create that here, so you're on your own for that one... Sorry.
+%\input{app2}
+
+%%%% Input bibliography file %%%%%%%%%%%%%%%
+% \input{thesis}
+\bibliographystyle{abbrv}
+\bibliography{biblio,
+introduction/introduction,
+methodology/methodology,
+casestudy/casestudy,
+conclusion/conclusion} % add intelligently
+\newpage
+
+%%%%%%%%%%%%%% Vita %%%%%%%%%%%%%%%%%
+\section*{Vita}
+\input{vita}
+\newpage
+
+\end{document}

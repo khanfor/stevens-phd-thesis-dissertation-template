@@ -1,0 +1,240 @@
+%%
+%% Place here your \usepackage's. Some recommended packages are already included.
+%%
+
+% Graphics:
+\usepackage[final]{graphicx}
+%\usepackage{graphicx} % use this line instead of the above to suppress graphics in draft copies
+%\usepackage{graphpap} % \defines the \graphpaper command
+
+% Indent first line of each section:
+%\usepackage{indentfirst}
+
+% Good AMS stuff:
+\usepackage{amsthm} % facilities for theorem-like environments
+\usepackage[tbtags]{amsmath} % a lot of good stuff!
+
+% Fonts and symbols:
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{xspace}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{microtype}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{todonotes}
+\usepackage{url}
+\newfloat{algorithm}{t}{lop}
+
+\usepackage{blindtext}
+
+%% Controls spacing between lines (\doublespacing, \onehalfspacing, etc.):
+\usepackage[utf8x]{inputenc}
+\usepackage{fancyhdr}
+
+% This package to change the font if the document. This font is optional as you preference. You can comment it to use the CMU font
+%\usepackage{helvet}
+%\renewcommand{\familydefault}{\sfdefault}
+
+%% \usepackage{amsmath}
+%% \usepackage{amssymb}
+\usepackage{lipsum}
+% \newfloat{algorithm}{t}{lop}
+
+% Packages for setting the length and width of document
+\usepackage{setspace}
+
+% Package for sideway images and figures
+\usepackage{rotating}
+\usepackage{pdflscape}
+
+% Formatting tools:
+%\usepackage{relsize} % relative font size selection, provides commands \textsmalle, \textlarger
+%\usepackage{xspace} % gentle spacing in macros, such as \newcommand{\acims}{\textsc{acim}s\xspace}
+
+% Page formatting utility:
+%\usepackage{geometry}
+\usepackage{multirow}
+
+\usepackage{listings}
+
+% For citations
+\usepackage[numbers,sort]{natbib}
+\usepackage[nottoc]{tocbibind}
+
+\usepackage[all,cmtip]{xy}
+
+% Change the color of the hyperlinks and titles from blue to black
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks = false,
+    linkbordercolor = {white},
+    linkcolor=black,
+    filecolor=black,
+    urlcolor=black,
+    citecolor=black
+}
+
+%%
+%% Place here your \newcommand's and \renewcommand's. Some examples already included.
+%%
+%\newcommand{\acims}{\textsc{acim}s\xspace}
+\newcommand{\Mspace}        {{\mathbb M}}
+\newcommand{\Rspace}        {{\mathbb R}}
+\newcommand{\Cspace}        {{\mathbb C}}
+
+\newcommand{\Mo}        {{\hat M}}
+\newcommand{\Ms}        {{\tilde M}}
+\newcommand{\Do}          {{\hat D}}
+\newcommand{\Ds}        {{\tilde D}}
+\newcommand{\doo}          {{\hat d}}
+\newcommand{\dss}        {{\tilde d}}
+\newcommand{\w}        {{\mathbf w}}
+
+% general
+\newcommand{\ie}{i.e.}
+\newcommand{\eg}{e.g.}
+\newcommand{\reffig}[1]{{Figure~\ref{#1}}}
+\newcommand{\refchap}[1]{{Chapter~\ref{#1}}}
+\newcommand{\refsec}[1]{{Section~\ref{#1}}}
+\newcommand{\reftab}[1]{{Table~\ref{#1}}}
+\newcommand{\refapp}[1]{{Appendix~\ref{#1}}}
+\newcommand{\refeq}[1]{{Equation~\ref{#1}}}
+\newcommand{\refalg}[1]{{Algorithm~\ref{#1}}}
+\newcommand{\myparagraph}[1]{\noindent \textbf{#1}}
+\newcommand{\highlight}[1]{{\color{black}#1}}
+
+%%
+%% Place here your \newtheorem's:
+%%
+
+%% Some examples commented out below. Create your own or use these...
+%%%%%%%%%\swapnumbers % this makes the numbers appear before the statement name.
+%\theoremstyle{plain}
+%\newtheorem{thm}{Theorem}[chapter]
+%\newtheorem{prop}[thm]{Proposition}
+%\newtheorem{lemma}[thm]{Lemma}
+%\newtheorem{cor}[thm]{Corollary}
+
+%\theoremstyle{definition}
+%\newtheorem{define}{Definition}[chapter]
+
+%\theoremstyle{remark}
+%\newtheorem*{rmk*}{Remark}
+%\newtheorem*{rmks*}{Remarks}
+
+%% This defines the "proo" environment, which is the same as proof, but
+%% with "Proof:" instead of "Proof.". I prefer the former.
+%\newenvironment{proo}{\begin{proof}[Proof:]}{\end{proof}}
+
+%\usepackage[subfigure]{tocloft}
+\usepackage[explicit]{titlesec}%
+\usepackage{titletoc}
+\usepackage{etoolbox}
+
+% To add space between the Table of Contents, List of Figures and the List of Tables and the list content
+\addtocontents{toc}{\vspace{1.2cm}}
+\addtocontents{lof}{\vspace{1.2cm}}
+\addtocontents{lot}{\vspace{1.2cm}}
+
+% This command for chapters
+\newcommand\chap[1]{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}}
+
+% Table of contents formatting
+% Removing the dots between the Title and the page number
+\makeatletter
+\renewcommand{\@dotsep}{10000} 
+\makeatother
+
+\usepackage{tabto}
+\usepackage{makebox}
+
+% Table of contents font and space modifications
+
+\titlecontents{chapter}[0pt]
+    {\vskip 10pt \bfseries}
+    {\bfseries\text{Chapter }\thecontentslabel\tabto{3.5cm}}
+    {}
+    {\hfill\bfseries\contentspage}
+
+\titlecontents{section}[0pt]
+    {}
+    {\quad\quad\thecontentslabel\tabto{3.5cm}}
+    {}
+    {\hfill\contentspage}
+
+\titlecontents{subsection}[0pt]
+    {}
+    {\quad\quad\thecontentslabel\tabto{3.5cm}}
+    {}
+    {\hfill\contentspage}
+    
+\titlecontents{table}[0pt]
+    {}
+    {\quad\quad\thecontentslabel\tabto{3.5cm}}
+    {}
+    {\hfill\contentspage}
+
+\titlecontents{figure}[0pt]
+    {}
+    {\quad\quad\thecontentslabel\tabto{3.5cm}}
+    {}
+    {\hfill\contentspage}
+
+% Change the Table of Contents, List of Tables ... etc. font size insited of big font
+\renewcommand{\contentsname}{\normalsize{Table of Contents}}
+\renewcommand{\listfigurename}{\normalsize{List of Figures}}
+\renewcommand{\listtablename}{\normalsize{List of Tables}}
+\renewcommand{\bibname}{\normalsize{Bibliography}}
+\renewcommand{\indexname}{\normalsize{Index}}
+
+% May 2009 added this to move page number up a bit
+\addtolength{\voffset}{-2em}
+
+% This is to format the chapter tags in this file
+\usepackage{chngcntr}
+\usepackage{lipsum}% just to generate text for the example
+
+%% Page layout (customized to letter paper and Stevens requirements):
+% if not using pdflatex to produce output, you may need to change to pagewidth and pageheight variables.
+%\pagewidth 8.5in
+%\pageheight 11in 
+\pdfpagewidth 8.5in
+\pdfpageheight 11in 
+%
+\setlength{\textheight}{8.5in} 
+\setlength{\oddsidemargin}{0.5in}  
+\setlength{\evensidemargin}{0.5in} 
+\setlength{\textwidth}{6.0in}
+\setlength{\topmargin}{0.in}    
+\setlength{\headheight}{0.5in}
+\setlength{\headwidth}{6.0in}
+% change from .25in to .5 in May 2009 
+\setlength{\headsep}{0.65in}
+\setlength{\parindent}{12mm}
+
+% For each chapter and section titles in the rest of the document the font formatting
+
+% Chapter styles
+\usepackage{sectsty}
+
+\chapternumberfont{\normalsize} 
+\chaptertitlefont{\normalsize}
+
+\makeatletter
+% No extra space between chapter number and chapter header lines:
+\patchcmd{\@makechapterhead} {\vskip 20}{\vskip 0} {}{}
+% Reduce extra space between chapter header and section header lines by 50%:
+\patchcmd{\@makechapterhead} {\vskip 40}{\vskip 20}{}{}
+\patchcmd{\@makeschapterhead}{\vskip 40}{\vskip 20}{}{} % for unnumbered chapters
+\makeatother
+
+% Sections styles
+\sectionfont{\normalsize}
+
+% Sub-sections styles
+\subsectionfont{\normalsize}
